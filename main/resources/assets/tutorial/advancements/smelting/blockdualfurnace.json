@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "tutorial:blockdualfurnace"
+        },
+        "title": {
+            "translate": "advancements.smelting.twofer.title"
+        },
+        "description": {
+            "translate": "advancements.smelting.twofer.description"
+        }
+    },
+    "parent": "tutorial:smelting/root",
+    "criteria": {
+        "get_dual_furnace": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "tutorial:blockdualfurnace"
+                    }
+                ]
+            }
+        }
+    }
+}

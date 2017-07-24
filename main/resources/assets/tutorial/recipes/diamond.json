@@ -1,0 +1,17 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "GGG",
+        "G G",
+        "GGG"
+    ],
+    "key": {
+        "G": {
+            "type": "forge:ore_dict",
+            "ore": "furnace"
+        }
+    },
+    "result": {
+        "item": "minecraft:diamond"
+    }
+}

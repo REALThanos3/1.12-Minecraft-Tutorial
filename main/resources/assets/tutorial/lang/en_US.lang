@@ -1,0 +1,23 @@
+item.strawberry.name=Strawberry
+item.strawberry_seeds.name=Strawberry Seeds
+
+tile.purple_glowstone_fence.name=Purple Glowstone Fence
+tile.dual_furnace.name=Dual Furnace
+tile.strawberry_crop.name=Strawberry Crop
+tile.acid.name=Acid
+
+container.dual_furnace=Dual Furnace
+
+enchantment.fly=Fly
+effect.fly=Fly
+potion.effect.fly=Potion of Fly
+splash_potion.effect.fly=Splash Potion of Fly
+lingering_potion.effect.fly=Lingering Potion of Fly
+tipped_arrow.effect.fly=Arrow of Fly
+
+fluid.acid=Acid
+
+advancements.smelting.root.title=Smelters
+advancements.smelting.root.description=Time to get smelting!
+advancements.smelting.twofer.title=That's a Twofer
+advancements.smelting.twofer.description=Make a dual furnace.
