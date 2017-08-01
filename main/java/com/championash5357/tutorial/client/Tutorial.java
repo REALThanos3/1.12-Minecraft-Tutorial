@@ -54,8 +54,8 @@ public class Tutorial {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
-	//public static final Enchantment FLY = new EnchantmentFly(Rarity.VERY_RARE, new EntityEquipmentSlot[] {EntityEquipmentSlot.FEET});
-	//public static final Potion FLY_POTION = new PotionFly();
+	public static final Enchantment FLY = new EnchantmentFly(Rarity.VERY_RARE, new EntityEquipmentSlot[] {EntityEquipmentSlot.FEET});
+	public static final Potion FLY_POTION = new PotionFly();
 	
 	static {
 		FluidRegistry.enableUniversalBucket();
@@ -63,14 +63,14 @@ public class Tutorial {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		//TutorialFluids.register();
+		TutorialFluids.register();
 		TutorialBlocks.init();
 		TutorialBlocks.register();
 		TutorialItems.init();
 		TutorialItems.register();
-		//GameRegistry.register(FLY, new ResourceLocation(Reference.MOD_ID + ":" + "fly"));
-		//GameRegistry.register(FLY_POTION, new ResourceLocation(Reference.MOD_ID + ":" + "fly"));
-		//PotionTypeRegistry.registerPotionTypes();
+		ForgeRegistries.ENCHANTMENTS.register(FLY);
+		ForgeRegistries.POTIONS.register(FLY_POTION);
+		PotionTypeRegistry.registerPotionTypes();
 		OreDictionary.registerOre("furnace", Blocks.FURNACE);
 		OreDictionary.registerOre("furnace", TutorialBlocks.dual_furnace);
 	}
@@ -80,6 +80,10 @@ public class Tutorial {
 		proxy.register();
 		NetworkRegistry.INSTANCE.registerGuiHandler(Reference.MOD_ID, new DualFurnaceGuiHandler());
 		MinecraftForge.EVENT_BUS.register(new TutorialEvents());
+		GameRegistry.addSmelting(Items.LEATHER_HELMET, new ItemStack(TutorialItems.fly_helmet), 20.0f);
+		GameRegistry.addSmelting(Items.LEATHER_CHESTPLATE, new ItemStack(TutorialItems.fly_chestplate), 20.0f);
+		GameRegistry.addSmelting(Items.LEATHER_LEGGINGS, new ItemStack(TutorialItems.fly_leggings), 20.0f);
+		GameRegistry.addSmelting(Items.LEATHER_BOOTS, new ItemStack(TutorialItems.fly_boots), 20.0f);
 	}
 	
 	@EventHandler

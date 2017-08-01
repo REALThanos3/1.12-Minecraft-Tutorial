@@ -1,5 +1,9 @@
 item.strawberry.name=Strawberry
 item.strawberry_seeds.name=Strawberry Seeds
+item.fly_helmet.name=Fly Helmet
+item.fly_chestplate.name=Fly Chestplate
+item.fly_leggings.name=Fly Leggings
+item.fly_boots.name=Fly Boots
 
 tile.purple_glowstone_fence.name=Purple Glowstone Fence
 tile.dual_furnace.name=Dual Furnace
@@ -21,3 +25,5 @@ advancements.smelting.root.title=Smelters
 advancements.smelting.root.description=Time to get smelting!
 advancements.smelting.twofer.title=That's a Twofer
 advancements.smelting.twofer.description=Make a dual furnace.
+advancements.smelting.fly.title=Burning to Fly
+advancements.smelting.fly.description=Smelt yourself fly armor.
