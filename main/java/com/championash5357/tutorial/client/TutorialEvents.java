@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class TutorialEvents {
 	
-	/*@SubscribeEvent
+	@SubscribeEvent
 	public void onFly(TickEvent.PlayerTickEvent event) {
 			boolean fly = false;
 			if(event.player.inventory.armorInventory.get(0) != null) {
@@ -26,5 +26,5 @@ public class TutorialEvents {
 				event.player.capabilities.isFlying = false;
 				event.player.capabilities.allowFlying = false;
 			}
-		}*/
+		}
 }

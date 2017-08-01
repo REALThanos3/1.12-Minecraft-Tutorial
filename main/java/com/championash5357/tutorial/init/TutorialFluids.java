@@ -21,15 +21,16 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TutorialFluids {
-	/*
+
 	private static ModelResourceLocation acid_location = new ModelResourceLocation(Reference.MOD_ID + ":" + BlockAcid.name, "fluid");
 	
 	public static void register() {
 		FluidRegistry.registerFluid(FluidAcid.instance);
-		GameRegistry.register(BlockAcid.instance, acid_location);
+		ForgeRegistries.BLOCKS.register(BlockAcid.instance);
 		Item acid = Item.getItemFromBlock(BlockAcid.instance);
 		ModelLoader.setCustomMeshDefinition(acid, new ItemMeshDefinition() {
 			
@@ -67,6 +68,7 @@ public class TutorialFluids {
 		public BlockAcid() {
 			super(FluidAcid.instance, Material.WATER);
 			setUnlocalizedName("blockacid");
+			setRegistryName(acid_location);
 		}
 		
 		@Override
@@ -82,5 +84,4 @@ public class TutorialFluids {
 			return EnumBlockRenderType.MODEL;
 		}
 	}
-	*/
 }
