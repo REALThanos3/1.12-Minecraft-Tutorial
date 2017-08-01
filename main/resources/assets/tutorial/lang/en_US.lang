@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 item.strawberry.name=Strawberry
 item.strawberry_seeds.name=Strawberry Seeds
 item.fly_helmet.name=Fly Helmet
@@ -26,4 +27,34 @@ advancements.smelting.root.description=Time to get smelting!
 advancements.smelting.twofer.title=That's a Twofer
 advancements.smelting.twofer.description=Make a dual furnace.
 advancements.smelting.fly.title=Burning to Fly
+=======
+item.strawberry.name=Strawberry
+item.strawberry_seeds.name=Strawberry Seeds
+item.fly_helmet.name=Fly Helmet
+item.fly_chestplate.name=Fly Chestplate
+item.fly_leggings.name=Fly Leggings
+item.fly_boots.name=Fly Boots
+
+tile.purple_glowstone_fence.name=Purple Glowstone Fence
+tile.dual_furnace.name=Dual Furnace
+tile.strawberry_crop.name=Strawberry Crop
+tile.acid.name=Acid
+
+container.dual_furnace=Dual Furnace
+
+enchantment.fly=Fly
+effect.fly=Fly
+potion.effect.fly=Potion of Fly
+splash_potion.effect.fly=Splash Potion of Fly
+lingering_potion.effect.fly=Lingering Potion of Fly
+tipped_arrow.effect.fly=Arrow of Fly
+
+fluid.acid=Acid
+
+advancements.smelting.root.title=Smelters
+advancements.smelting.root.description=Time to get smelting!
+advancements.smelting.twofer.title=That's a Twofer
+advancements.smelting.twofer.description=Make a dual furnace.
+advancements.smelting.fly.title=Burning to Fly
+>>>>>>> bdf34e8316fefd9ef2339fca27319eec751ce5df
 advancements.smelting.fly.description=Smelt yourself fly armor.
