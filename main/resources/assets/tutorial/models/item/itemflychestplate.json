@@ -1,15 +1,6 @@
-<<<<<<< HEAD
 {
     "parent": "item/generated",
     "textures": {
         "layer0": "minecraft:items/leather_chestplate"
     }
 }
-=======
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "minecraft:items/leather_chestplate"
-    }
-}
->>>>>>> bdf34e8316fefd9ef2339fca27319eec751ce5df

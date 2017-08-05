@@ -3,6 +3,7 @@ package com.championash5357.tutorial.client;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.Potion;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 

@@ -1,15 +1,6 @@
-<<<<<<< HEAD
 {
     "parent": "item/generated",
     "textures": {
         "layer0": "minecraft:items/leather_helmet"
     }
 }
-=======
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "minecraft:items/leather_helmet"
-    }
-}
->>>>>>> bdf34e8316fefd9ef2339fca27319eec751ce5df

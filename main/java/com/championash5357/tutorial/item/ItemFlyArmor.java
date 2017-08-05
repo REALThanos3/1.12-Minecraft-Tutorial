@@ -35,7 +35,7 @@ public class ItemFlyArmor extends ItemArmor {
 	
 	private void effectPlayer(EntityPlayer player, Potion potion, int amplifier) {
 		if (player.getActivePotionEffect(potion) == null || player.getActivePotionEffect(potion).getDuration() <= 1)
-				player.addPotionEffect(new PotionEffect(potion, 159, amplifier, true, false));
+				player.addPotionEffect(new PotionEffect(potion, 159, amplifier, false, false));
 	}
 	
 	@Override
