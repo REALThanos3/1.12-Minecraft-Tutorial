@@ -1,6 +1,7 @@
 package com.championash5357.tutorial.client;
 
 import com.championash5357.tutorial.enchantment.EnchantmentFly;
+import com.championash5357.tutorial.entity.EntityRegistry;
 import com.championash5357.tutorial.gui.DualFurnaceGuiHandler;
 import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialFluids;
@@ -9,6 +10,7 @@ import com.championash5357.tutorial.potion.PotionFly;
 import com.championash5357.tutorial.potion.PotionTypeRegistry;
 import com.championash5357.tutorial.proxy.CommonProxy;
 import com.championash5357.tutorial.recipe.DualFurnaceRecipes;
+import com.championash5357.tutorial.render.RenderingRegistry;
 import com.google.common.base.Predicate;
 import com.google.gson.JsonObject;
 
@@ -71,6 +73,7 @@ public class Tutorial {
 		ForgeRegistries.ENCHANTMENTS.register(FLY);
 		ForgeRegistries.POTIONS.register(FLY_POTION);
 		PotionTypeRegistry.registerPotionTypes();
+		RenderingRegistry.registerEntityRenders();
 		OreDictionary.registerOre("furnace", Blocks.FURNACE);
 		OreDictionary.registerOre("furnace", TutorialBlocks.dual_furnace);
 	}
@@ -80,6 +83,7 @@ public class Tutorial {
 		proxy.register();
 		NetworkRegistry.INSTANCE.registerGuiHandler(Reference.MOD_ID, new DualFurnaceGuiHandler());
 		MinecraftForge.EVENT_BUS.register(new TutorialEvents());
+		EntityRegistry.registerEntities();
 		GameRegistry.addSmelting(Items.LEATHER_HELMET, new ItemStack(TutorialItems.fly_helmet), 20.0f);
 		GameRegistry.addSmelting(Items.LEATHER_CHESTPLATE, new ItemStack(TutorialItems.fly_chestplate), 20.0f);
 		GameRegistry.addSmelting(Items.LEATHER_LEGGINGS, new ItemStack(TutorialItems.fly_leggings), 20.0f);

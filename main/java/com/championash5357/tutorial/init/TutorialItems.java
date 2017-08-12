@@ -1,6 +1,7 @@
 package com.championash5357.tutorial.init;
 
 import com.championash5357.tutorial.item.ItemFlyArmor;
+import com.championash5357.tutorial.item.ItemRock;
 import com.championash5357.tutorial.item.ItemStrawberry;
 import com.championash5357.tutorial.item.ItemStrawberrySeeds;
 
@@ -25,6 +26,8 @@ public class TutorialItems {
 	public static Item strawberry_seeds;
 	public static Item strawberry;
 	
+	public static Item rock;
+	
 	public static void init() {
 		strawberry_seeds = new ItemStrawberrySeeds(TutorialBlocks.strawberry_crop, Blocks.FARMLAND);
 		strawberry = new ItemStrawberry(2, 1.0f, false);
@@ -32,6 +35,7 @@ public class TutorialItems {
 		fly_chestplate = new ItemFlyArmor(FlyArmor, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("fly_chestplate").setRegistryName("itemflychestplate");
 		fly_leggings = new ItemFlyArmor(FlyArmor, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("fly_leggings").setRegistryName("itemflyleggings");
 		fly_boots = new ItemFlyArmor(FlyArmor, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("fly_boots").setRegistryName("itemflyboots");
+		rock = new ItemRock();
 	}
 	
 	public static void register() {
@@ -41,6 +45,7 @@ public class TutorialItems {
 		registerItem(fly_chestplate);
 		registerItem(fly_leggings);
 		registerItem(fly_boots);
+		registerItem(rock);
 	}
 	
 	private static void registerItem(Item item) {
@@ -54,6 +59,7 @@ public class TutorialItems {
 		registerRender(fly_chestplate);
 		registerRender(fly_leggings);
 		registerRender(fly_boots);
+		registerRender(rock);
 	}
 	
 	public static void registerRender(Item item) {
