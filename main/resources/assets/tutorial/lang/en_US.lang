@@ -10,6 +10,7 @@ tile.purple_glowstone_fence.name=Purple Glowstone Fence
 tile.dual_furnace.name=Dual Furnace
 tile.strawberry_crop.name=Strawberry Crop
 tile.acid.name=Acid
+tile.weird_cobblestone.name=Weird Cobblestone
 
 container.dual_furnace=Dual Furnace
 
