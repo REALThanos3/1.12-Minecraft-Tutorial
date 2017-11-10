@@ -11,6 +11,7 @@ tile.dual_furnace.name=Dual Furnace
 tile.strawberry_crop.name=Strawberry Crop
 tile.acid.name=Acid
 tile.weird_cobblestone.name=Weird Cobblestone
+tile.special_drop.name=Special Drop
 
 container.dual_furnace=Dual Furnace
 
