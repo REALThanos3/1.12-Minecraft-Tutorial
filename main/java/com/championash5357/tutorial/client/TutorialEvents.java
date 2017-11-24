@@ -1,9 +1,11 @@
 package com.championash5357.tutorial.client;
 
+import com.championash5357.tutorial.init.TutorialItems;
+
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class TutorialEvents {

@@ -1,0 +1,16 @@
+{
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:gold_block"
+        },
+        {
+            "type": "forge:ore_dict",
+            "ore": "cutter"
+        }
+    ],
+    "result": {
+        "item": "minecraft:diamond",
+        "count": 5
+    }
+}

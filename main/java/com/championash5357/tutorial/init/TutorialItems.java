@@ -1,5 +1,6 @@
 package com.championash5357.tutorial.init;
 
+import com.championash5357.tutorial.item.ItemCutter;
 import com.championash5357.tutorial.item.ItemFlyArmor;
 import com.championash5357.tutorial.item.ItemRock;
 import com.championash5357.tutorial.item.ItemStrawberry;
@@ -28,6 +29,8 @@ public class TutorialItems {
 	
 	public static Item rock;
 	
+	public static Item cutter;
+	
 	public static void init() {
 		strawberry_seeds = new ItemStrawberrySeeds(TutorialBlocks.strawberry_crop, Blocks.FARMLAND);
 		strawberry = new ItemStrawberry(2, 1.0f, false);
@@ -36,6 +39,7 @@ public class TutorialItems {
 		fly_leggings = new ItemFlyArmor(FlyArmor, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("fly_leggings").setRegistryName("itemflyleggings");
 		fly_boots = new ItemFlyArmor(FlyArmor, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("fly_boots").setRegistryName("itemflyboots");
 		rock = new ItemRock();
+		cutter = new ItemCutter();
 	}
 	
 	public static void register() {
@@ -46,6 +50,7 @@ public class TutorialItems {
 		registerItem(fly_leggings);
 		registerItem(fly_boots);
 		registerItem(rock);
+		registerItem(cutter);
 	}
 	
 	private static void registerItem(Item item) {
@@ -60,6 +65,7 @@ public class TutorialItems {
 		registerRender(fly_leggings);
 		registerRender(fly_boots);
 		registerRender(rock);
+		registerRender(cutter);
 	}
 	
 	public static void registerRender(Item item) {

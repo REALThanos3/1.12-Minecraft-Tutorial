@@ -76,6 +76,7 @@ public class Tutorial {
 		RenderingRegistry.registerEntityRenders();
 		OreDictionary.registerOre("furnace", Blocks.FURNACE);
 		OreDictionary.registerOre("furnace", TutorialBlocks.dual_furnace);
+		OreDictionary.registerOre("cutter", new ItemStack(TutorialItems.cutter, 1, OreDictionary.WILDCARD_VALUE));
 	}
 	
 	@EventHandler

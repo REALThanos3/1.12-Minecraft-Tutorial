@@ -5,6 +5,7 @@ item.fly_chestplate.name=Fly Chestplate
 item.fly_leggings.name=Fly Leggings
 item.fly_boots.name=Fly Boots
 item.rock.name=Rock
+item.cutter.name=Cutter
 
 tile.purple_glowstone_fence.name=Purple Glowstone Fence
 tile.dual_furnace.name=Dual Furnace
