@@ -2,6 +2,7 @@ package com.championash5357.tutorial.init;
 
 import com.championash5357.tutorial.item.ItemCutter;
 import com.championash5357.tutorial.item.ItemFlyArmor;
+import com.championash5357.tutorial.item.ItemModAxe;
 import com.championash5357.tutorial.item.ItemRock;
 import com.championash5357.tutorial.item.ItemStrawberry;
 import com.championash5357.tutorial.item.ItemStrawberrySeeds;
@@ -12,6 +13,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -23,6 +25,9 @@ public class TutorialItems {
 	public static Item fly_chestplate;
 	public static Item fly_leggings;
 	public static Item fly_boots;
+	
+	public static ToolMaterial Garnet = EnumHelper.addToolMaterial("Garnet", 4, 2000, 15.0f, 6.0f, 64);
+	public static Item garnet_axe;
 	
 	public static Item strawberry_seeds;
 	public static Item strawberry;
@@ -40,6 +45,7 @@ public class TutorialItems {
 		fly_boots = new ItemFlyArmor(FlyArmor, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("fly_boots").setRegistryName("itemflyboots");
 		rock = new ItemRock();
 		cutter = new ItemCutter();
+		garnet_axe = new ItemModAxe(Garnet, "garnet_axe", "itemgarnetaxe");
 	}
 	
 	public static void register() {
@@ -51,6 +57,7 @@ public class TutorialItems {
 		registerItem(fly_boots);
 		registerItem(rock);
 		registerItem(cutter);
+		registerItem(garnet_axe);
 	}
 	
 	private static void registerItem(Item item) {
@@ -66,6 +73,7 @@ public class TutorialItems {
 		registerRender(fly_boots);
 		registerRender(rock);
 		registerRender(cutter);
+		registerRender(garnet_axe);
 	}
 	
 	public static void registerRender(Item item) {

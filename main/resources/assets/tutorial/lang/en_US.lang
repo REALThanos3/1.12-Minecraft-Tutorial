@@ -6,6 +6,7 @@ item.fly_leggings.name=Fly Leggings
 item.fly_boots.name=Fly Boots
 item.rock.name=Rock
 item.cutter.name=Cutter
+item.garnet_axe.name=Garnet Axe
 
 tile.purple_glowstone_fence.name=Purple Glowstone Fence
 tile.dual_furnace.name=Dual Furnace
@@ -13,6 +14,7 @@ tile.strawberry_crop.name=Strawberry Crop
 tile.acid.name=Acid
 tile.weird_cobblestone.name=Weird Cobblestone
 tile.special_drop.name=Special Drop
+tile.easel.name=Easel
 
 container.dual_furnace=Dual Furnace
 

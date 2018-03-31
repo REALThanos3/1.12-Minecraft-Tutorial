@@ -1,6 +1,7 @@
 package com.championash5357.tutorial.init;
 
 import com.championash5357.tutorial.block.BlockDualFurnace;
+import com.championash5357.tutorial.block.BlockEasel;
 import com.championash5357.tutorial.block.BlockModdedFence;
 import com.championash5357.tutorial.block.BlockSpecialDrop;
 import com.championash5357.tutorial.block.BlockStrawberry;
@@ -24,6 +25,8 @@ public class TutorialBlocks {
 	public static Block strawberry_crop;
 	public static Block weird_cobblestone;
 	public static Block special_drop;
+	public static Block easel;
+	public static Block canvas;
 	
 	public static void init() {
 		purple_glowstone_fence = new BlockModdedFence(Material.GLASS, MapColor.PURPLE).setUnlocalizedName("purple_glowstone_fence").setRegistryName("blockpurpleglowstonefence");
@@ -31,6 +34,7 @@ public class TutorialBlocks {
 		strawberry_crop = new BlockStrawberry();
 		weird_cobblestone = new BlockWeirdCobblestone();
 		special_drop = new BlockSpecialDrop();
+		easel = new BlockEasel();
 	}
 	
 	public static void register() {
@@ -39,7 +43,8 @@ public class TutorialBlocks {
 		GameRegistry.registerTileEntity(TileEntityDualFurnace.class, "dual_furnace");
 		registerBlock(strawberry_crop);
 		registerBlock(weird_cobblestone);
-		registerBlock(special_drop);
+		registerBlock(special_drop); 
+		registerBlock(easel);
 	}
 	
 	private static void registerBlock(Block block) {
@@ -55,6 +60,7 @@ public class TutorialBlocks {
 		registerRender(strawberry_crop);
 		registerRender(weird_cobblestone);
 		registerRender(special_drop);
+		registerRender(easel);
 	}
 	
 	public static void registerRender(Block block) {
