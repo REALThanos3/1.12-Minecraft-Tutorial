@@ -1,6 +1,7 @@
 package com.championash5357.tutorial.tileentity;
 
 import com.championash5357.tutorial.block.BlockDualFurnace;
+import com.championash5357.tutorial.capability.TutorialEnergyStorage;
 import com.championash5357.tutorial.recipe.DualFurnaceRecipes;
 
 import net.minecraft.block.Block;

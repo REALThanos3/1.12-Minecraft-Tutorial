@@ -1,38 +1,25 @@
 package com.championash5357.tutorial.client;
 
+import com.championash5357.tutorial.capability.TutorialCapability;
 import com.championash5357.tutorial.enchantment.EnchantmentFly;
 import com.championash5357.tutorial.entity.EntityRegistry;
-import com.championash5357.tutorial.gui.DualFurnaceGuiHandler;
+import com.championash5357.tutorial.gui.TutorialGuiHandler;
 import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialFluids;
 import com.championash5357.tutorial.init.TutorialItems;
 import com.championash5357.tutorial.potion.PotionFly;
 import com.championash5357.tutorial.potion.PotionTypeRegistry;
 import com.championash5357.tutorial.proxy.CommonProxy;
-import com.championash5357.tutorial.recipe.DualFurnaceRecipes;
 import com.championash5357.tutorial.render.RenderingRegistry;
-import com.google.common.base.Predicate;
-import com.google.gson.JsonObject;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.init.MobEffects;
-import net.minecraft.init.PotionTypes;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.potion.PotionHelper;
-import net.minecraft.potion.PotionType;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.common.crafting.IRecipeFactory;
-import net.minecraftforge.common.crafting.JsonContext;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -77,12 +64,13 @@ public class Tutorial {
 		OreDictionary.registerOre("furnace", Blocks.FURNACE);
 		OreDictionary.registerOre("furnace", TutorialBlocks.dual_furnace);
 		OreDictionary.registerOre("cutter", new ItemStack(TutorialItems.cutter, 1, OreDictionary.WILDCARD_VALUE));
+		TutorialCapability.register();
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.register();
-		NetworkRegistry.INSTANCE.registerGuiHandler(Reference.MOD_ID, new DualFurnaceGuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(Reference.MOD_ID, new TutorialGuiHandler());
 		MinecraftForge.EVENT_BUS.register(new TutorialEvents());
 		EntityRegistry.registerEntities();
 		GameRegistry.addSmelting(Items.LEATHER_HELMET, new ItemStack(TutorialItems.fly_helmet), 20.0f);

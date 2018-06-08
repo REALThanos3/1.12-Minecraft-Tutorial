@@ -3,7 +3,7 @@ package com.championash5357.tutorial.block;
 import java.util.Random;
 
 import com.championash5357.tutorial.client.Reference;
-import com.championash5357.tutorial.gui.DualFurnaceGuiHandler;
+import com.championash5357.tutorial.gui.TutorialGuiHandler;
 import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.tileentity.TileEntityDualFurnace;
 
@@ -78,7 +78,7 @@ public class BlockDualFurnace extends Block implements ITileEntityProvider {
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
 		if(!worldIn.isRemote) {
-			playerIn.openGui(Reference.MOD_ID, DualFurnaceGuiHandler.DUAL_FURNACE_GUI, worldIn, pos.getX(), pos.getY(), pos.getZ());
+			playerIn.openGui(Reference.MOD_ID, TutorialGuiHandler.DUAL_FURNACE_GUI, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		}
 		return true;
 	}
