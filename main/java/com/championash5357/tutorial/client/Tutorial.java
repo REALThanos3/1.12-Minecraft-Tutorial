@@ -7,6 +7,7 @@ import com.championash5357.tutorial.gui.TutorialGuiHandler;
 import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialFluids;
 import com.championash5357.tutorial.init.TutorialItems;
+import com.championash5357.tutorial.init.TutorialMusic;
 import com.championash5357.tutorial.potion.PotionFly;
 import com.championash5357.tutorial.potion.PotionTypeRegistry;
 import com.championash5357.tutorial.proxy.CommonProxy;
@@ -52,6 +53,7 @@ public class Tutorial {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		TutorialMusic.registerSounds();
 		TutorialFluids.register();
 		TutorialBlocks.init();
 		TutorialBlocks.register();

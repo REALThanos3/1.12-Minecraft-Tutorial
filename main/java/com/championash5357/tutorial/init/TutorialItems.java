@@ -6,6 +6,7 @@ import com.championash5357.tutorial.item.ItemModAxe;
 import com.championash5357.tutorial.item.ItemRock;
 import com.championash5357.tutorial.item.ItemStrawberry;
 import com.championash5357.tutorial.item.ItemStrawberrySeeds;
+import com.championash5357.tutorial.item.ItemTutorialRecord;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -15,6 +16,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemRecord;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -36,6 +38,8 @@ public class TutorialItems {
 	
 	public static Item cutter;
 	
+	public static ItemTutorialRecord perspectives_record;
+	
 	public static void init() {
 		strawberry_seeds = new ItemStrawberrySeeds(TutorialBlocks.strawberry_crop, Blocks.FARMLAND);
 		strawberry = new ItemStrawberry(2, 1.0f, false);
@@ -46,6 +50,7 @@ public class TutorialItems {
 		rock = new ItemRock();
 		cutter = new ItemCutter();
 		garnet_axe = new ItemModAxe(Garnet, "garnet_axe", "itemgarnetaxe");
+		perspectives_record = new ItemTutorialRecord("perspectives", TutorialMusic.perspectives, "perspectives_record", "itemperspectivesrecord");
 	}
 	
 	public static void register() {
@@ -58,6 +63,7 @@ public class TutorialItems {
 		registerItem(rock);
 		registerItem(cutter);
 		registerItem(garnet_axe);
+		registerItem(perspectives_record);
 	}
 	
 	private static void registerItem(Item item) {
@@ -74,6 +80,7 @@ public class TutorialItems {
 		registerRender(rock);
 		registerRender(cutter);
 		registerRender(garnet_axe);
+		registerRender(perspectives_record);
 	}
 	
 	public static void registerRender(Item item) {

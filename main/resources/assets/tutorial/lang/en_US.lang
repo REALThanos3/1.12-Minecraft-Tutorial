@@ -8,6 +8,9 @@ item.rock.name=Rock
 item.cutter.name=Cutter
 item.garnet_axe.name=Garnet Axe
 
+item.perspectives_record.name=Perspectives - Kevin MacLeod
+item.record.perspectives_record.desc=Perspectives
+
 tile.purple_glowstone_fence.name=Purple Glowstone Fence
 tile.dual_furnace.name=Dual Furnace
 tile.strawberry_crop.name=Strawberry Crop
