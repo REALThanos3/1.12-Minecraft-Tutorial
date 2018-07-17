@@ -25,10 +25,10 @@ public class ItemFlyArmor extends ItemArmor {
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
-		if (player.inventory.armorItemInSlot(3) != null && player.inventory.armorItemInSlot(3).getItem() == TutorialItems.fly_helmet
-				&& player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() == TutorialItems.fly_chestplate
-				&& player.inventory.armorItemInSlot(1) != null && player.inventory.armorItemInSlot(1).getItem() == TutorialItems.fly_leggings
-				&& player.inventory.armorItemInSlot(0) != null && player.inventory.armorItemInSlot(0).getItem() == TutorialItems.fly_boots) {
+		if (player.inventory.armorItemInSlot(3) != null && player.inventory.armorItemInSlot(3).getItem() == TutorialItems.FLY_HELMET
+				&& player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() == TutorialItems.FLY_CHESTPLATE
+				&& player.inventory.armorItemInSlot(1) != null && player.inventory.armorItemInSlot(1).getItem() == TutorialItems.FLY_LEGGINGS
+				&& player.inventory.armorItemInSlot(0) != null && player.inventory.armorItemInSlot(0).getItem() == TutorialItems.FLY_BOOTS) {
 			this.effectPlayer(player, Tutorial.FLY_POTION, 0);
 		}
 	}

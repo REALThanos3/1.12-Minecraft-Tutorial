@@ -7,7 +7,6 @@ import com.championash5357.tutorial.gui.TutorialGuiHandler;
 import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialFluids;
 import com.championash5357.tutorial.init.TutorialItems;
-import com.championash5357.tutorial.init.TutorialMusic;
 import com.championash5357.tutorial.potion.PotionFly;
 import com.championash5357.tutorial.potion.PotionTypeRegistry;
 import com.championash5357.tutorial.proxy.CommonProxy;
@@ -53,19 +52,11 @@ public class Tutorial {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		TutorialMusic.registerSounds();
 		TutorialFluids.register();
-		TutorialBlocks.init();
-		TutorialBlocks.register();
-		TutorialItems.init();
-		TutorialItems.register();
 		ForgeRegistries.ENCHANTMENTS.register(FLY);
 		ForgeRegistries.POTIONS.register(FLY_POTION);
 		PotionTypeRegistry.registerPotionTypes();
 		RenderingRegistry.registerEntityRenders();
-		OreDictionary.registerOre("furnace", Blocks.FURNACE);
-		OreDictionary.registerOre("furnace", TutorialBlocks.dual_furnace);
-		OreDictionary.registerOre("cutter", new ItemStack(TutorialItems.cutter, 1, OreDictionary.WILDCARD_VALUE));
 		TutorialCapability.register();
 	}
 	
@@ -73,12 +64,11 @@ public class Tutorial {
 	public void init(FMLInitializationEvent event) {
 		proxy.register();
 		NetworkRegistry.INSTANCE.registerGuiHandler(Reference.MOD_ID, new TutorialGuiHandler());
-		MinecraftForge.EVENT_BUS.register(new TutorialEvents());
 		EntityRegistry.registerEntities();
-		GameRegistry.addSmelting(Items.LEATHER_HELMET, new ItemStack(TutorialItems.fly_helmet), 20.0f);
-		GameRegistry.addSmelting(Items.LEATHER_CHESTPLATE, new ItemStack(TutorialItems.fly_chestplate), 20.0f);
-		GameRegistry.addSmelting(Items.LEATHER_LEGGINGS, new ItemStack(TutorialItems.fly_leggings), 20.0f);
-		GameRegistry.addSmelting(Items.LEATHER_BOOTS, new ItemStack(TutorialItems.fly_boots), 20.0f);
+		GameRegistry.addSmelting(Items.LEATHER_HELMET, new ItemStack(TutorialItems.FLY_HELMET), 20.0f);
+		GameRegistry.addSmelting(Items.LEATHER_CHESTPLATE, new ItemStack(TutorialItems.FLY_CHESTPLATE), 20.0f);
+		GameRegistry.addSmelting(Items.LEATHER_LEGGINGS, new ItemStack(TutorialItems.FLY_LEGGINGS), 20.0f);
+		GameRegistry.addSmelting(Items.LEATHER_BOOTS, new ItemStack(TutorialItems.FLY_BOOTS), 20.0f);
 	}
 	
 	@EventHandler

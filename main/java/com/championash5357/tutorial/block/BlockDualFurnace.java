@@ -47,7 +47,7 @@ public class BlockDualFurnace extends Block implements ITileEntityProvider {
 	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(TutorialBlocks.dual_furnace);
+		return Item.getItemFromBlock(TutorialBlocks.DUAL_FURNACE);
 	}
 	
 	@Override
@@ -88,9 +88,9 @@ public class BlockDualFurnace extends Block implements ITileEntityProvider {
 		TileEntity tileentity = worldIn.getTileEntity(pos);
 		
 		if(active)
-			worldIn.setBlockState(pos, TutorialBlocks.dual_furnace.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, true), 3);
+			worldIn.setBlockState(pos, TutorialBlocks.DUAL_FURNACE.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, true), 3);
 		else
-			worldIn.setBlockState(pos, TutorialBlocks.dual_furnace.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, false), 3);
+			worldIn.setBlockState(pos, TutorialBlocks.DUAL_FURNACE.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, false), 3);
 		
 		if(tileentity != null) {
 			tileentity.validate();
@@ -122,7 +122,7 @@ public class BlockDualFurnace extends Block implements ITileEntityProvider {
 	
 	@Override
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
-		return new ItemStack(TutorialBlocks.dual_furnace);
+		return new ItemStack(TutorialBlocks.DUAL_FURNACE);
 	}
 	
 	@Override

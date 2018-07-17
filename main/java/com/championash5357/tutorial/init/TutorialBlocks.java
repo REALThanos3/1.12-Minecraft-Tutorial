@@ -6,65 +6,84 @@ import com.championash5357.tutorial.block.BlockModdedFence;
 import com.championash5357.tutorial.block.BlockSpecialDrop;
 import com.championash5357.tutorial.block.BlockStrawberry;
 import com.championash5357.tutorial.block.BlockWeirdCobblestone;
+import com.championash5357.tutorial.client.Reference;
 import com.championash5357.tutorial.tileentity.TileEntityDualFurnace;
+import com.google.common.base.Preconditions;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
+import net.minecraftforge.oredict.OreDictionary;
 
+@ObjectHolder(Reference.MOD_ID)
 public class TutorialBlocks {
 	
-	public static Block purple_glowstone_fence;
-	public static Block dual_furnace;
-	public static Block strawberry_crop;
-	public static Block weird_cobblestone;
-	public static Block special_drop;
-	public static Block easel;
-	public static Block canvas;
+	public static final Block PURPLE_GLOWSTONE_FENCE = new BlockModdedFence(Material.GLASS, MapColor.PURPLE).setUnlocalizedName("purple_glowstone_fence").setRegistryName("blockpurpleglowstonefence");
+	public static final Block DUAL_FURNACE = new BlockDualFurnace();
+	public static final Block STRAWBERRY_CROP = new BlockStrawberry();
+	public static final Block WEIRD_COBBLESTONE = new BlockWeirdCobblestone();
+	public static final Block SPECIAL_DROP = new BlockSpecialDrop();
+	public static final Block EASEL = new BlockEasel();
+	public static final Block CANVAS = null;
 	
-	public static void init() {
-		purple_glowstone_fence = new BlockModdedFence(Material.GLASS, MapColor.PURPLE).setUnlocalizedName("purple_glowstone_fence").setRegistryName("blockpurpleglowstonefence");
-		dual_furnace = new BlockDualFurnace();
-		strawberry_crop = new BlockStrawberry();
-		weird_cobblestone = new BlockWeirdCobblestone();
-		special_drop = new BlockSpecialDrop();
-		easel = new BlockEasel();
-	}
-	
-	public static void register() {
-		registerBlock(purple_glowstone_fence);
-		registerBlock(dual_furnace);
-		GameRegistry.registerTileEntity(TileEntityDualFurnace.class, "dual_furnace");
-		registerBlock(strawberry_crop);
-		registerBlock(weird_cobblestone);
-		registerBlock(special_drop); 
-		registerBlock(easel);
-	}
-	
-	private static void registerBlock(Block block) {
-		ForgeRegistries.BLOCKS.register(block);
-		ItemBlock item = new ItemBlock(block);
-		item.setRegistryName(block.getRegistryName());
-		ForgeRegistries.ITEMS.register(item);
-	}
-	
-	public static void registerRenders() {
-		registerRender(purple_glowstone_fence);
-		registerRender(dual_furnace);
-		registerRender(strawberry_crop);
-		registerRender(weird_cobblestone);
-		registerRender(special_drop);
-		registerRender(easel);
-	}
-	
-	public static void registerRender(Block block) {
-		Item item = Item.getItemFromBlock(block);
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+	@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+	public static class BlockRegistration {
+		public static final NonNullList<Item> ITEM_BLOCKS = NonNullList.<Item>create();
+		
+		@SubscribeEvent
+		public static void registerBlock(final RegistryEvent.Register<Block> event) {
+			final Block[] blocks = {
+					DUAL_FURNACE,
+					EASEL,
+					PURPLE_GLOWSTONE_FENCE,
+					SPECIAL_DROP,
+					STRAWBERRY_CROP,
+					WEIRD_COBBLESTONE
+			};
+			
+			event.getRegistry().registerAll(blocks);
+		}
+		
+		@SubscribeEvent
+		public static void registerItemBlocks(final RegistryEvent.Register<Item> event) {
+			final ItemBlock[] items = {
+				new ItemBlock(DUAL_FURNACE),
+				new ItemBlock(EASEL),
+				new ItemBlock(PURPLE_GLOWSTONE_FENCE),
+				new ItemBlock(SPECIAL_DROP),
+				new ItemBlock(STRAWBERRY_CROP),
+				new ItemBlock(WEIRD_COBBLESTONE)
+			};
+			
+			for(final ItemBlock item : items) {
+				final Block block = item.getBlock();
+				final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(), "Block %s has a null registry name.", block);
+				event.getRegistry().register(item.setRegistryName(registryName));
+				ITEM_BLOCKS.add(item);
+			}
+			
+			registerTileEntities();
+			registerOreDictionary();
+		}
+		
+		private static void registerTileEntities() {
+			GameRegistry.registerTileEntity(TileEntityDualFurnace.class, "dual_furnace");
+		}
+		
+		private static void registerOreDictionary() {
+			OreDictionary.registerOre("furnace", Blocks.FURNACE);
+			OreDictionary.registerOre("furnace", TutorialBlocks.DUAL_FURNACE);
+		}
 	}
 }

@@ -28,7 +28,7 @@ public class BlockStrawberry extends BlockCrops{
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if(!worldIn.isRemote) {
 			if(this.isMaxAge(state)) {
-				EntityItem item = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(TutorialItems.strawberry, 2));
+				EntityItem item = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(TutorialItems.STRAWBERRY, 2));
 				worldIn.spawnEntity(item);
 				worldIn.setBlockState(pos, this.withAge(5));
 				return true;
@@ -39,12 +39,12 @@ public class BlockStrawberry extends BlockCrops{
 	
 	@Override
 	protected Item getSeed() {
-		return TutorialItems.strawberry_seeds;
+		return TutorialItems.STRAWBERRY_SEEDS;
 	}
 	
 	@Override
 	protected Item getCrop() {
-		return TutorialItems.strawberry;
+		return TutorialItems.STRAWBERRY;
 	}
 	
 	@Override

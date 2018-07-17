@@ -52,7 +52,7 @@ public class ItemRock extends Item {
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if(!worldIn.isRemote) {
 			if(worldIn.getBlockState(pos.up()).equals(Blocks.AIR.getDefaultState())) {
-				worldIn.setBlockState(pos.up(), TutorialBlocks.dual_furnace.getDefaultState());
+				worldIn.setBlockState(pos.up(), TutorialBlocks.DUAL_FURNACE.getDefaultState());
 				return EnumActionResult.SUCCESS;
 			}
 			player.sendMessage(new TextComponentString(TextFormatting.RED + "There is not enough space to spawn the block!"));
