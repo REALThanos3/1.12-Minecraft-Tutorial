@@ -43,6 +43,12 @@ public class Tutorial {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
+	/* Way to register proxies (Above one is not recommended)
+	 * 
+	 * @SidedProxy(clientSide = "com.championash5357.tutorial.proxy.UpdatedClientProxy", serverSide = "com.championash5357.tutorial.proxy.ServerProxy")
+	 * public static IProxy proxy;
+	 */
+	
 	public static final Enchantment FLY = new EnchantmentFly(Rarity.VERY_RARE, new EntityEquipmentSlot[] {EntityEquipmentSlot.FEET});
 	public static final Potion FLY_POTION = new PotionFly();
 	
