@@ -1,8 +1,6 @@
 package com.championash5357.tutorial.proxy;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -27,17 +25,17 @@ public class ServerProxy implements IProxy {
 	}
 
 	@Override
-	public EntityPlayer getPlayerFromContext(MessageContext ctx) {
+	public EntityPlayerMP getPlayerFromContext(MessageContext ctx) {
 		return ctx.getServerHandler().player;
 	}
 
 	@Override
-	public World getWorldFromContext(MessageContext ctx) {
-		return ((EntityPlayerMP) getPlayerFromContext(ctx)).getServerWorld();
+	public WorldServer getWorldFromContext(MessageContext ctx) {
+		return getPlayerFromContext(ctx).getServerWorld();
 	}
 
 	@Override
 	public void addRunnableFromContext(MessageContext ctx, Runnable task) {
-		((WorldServer) getWorldFromContext(ctx)).addScheduledTask(task);
+		getWorldFromContext(ctx).addScheduledTask(task);
 	}
 }

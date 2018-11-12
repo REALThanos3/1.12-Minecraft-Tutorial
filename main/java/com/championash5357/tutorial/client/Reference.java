@@ -7,5 +7,5 @@ public class Reference {
 	public static final String ACCEPTED_VERSIONS = "[1.12]";
 	
 	public static final String CLIENT_PROXY_CLASS = "com.championash5357.tutorial.proxy.ClientProxy";
-	public static final String SERVER_PROXY_CLASS = "com.championash5357.tutorial.proxy.CommonProxy";
+	public static final String SERVER_PROXY_CLASS = "com.championash5357.tutorial.proxy.ServerProxy";
 }

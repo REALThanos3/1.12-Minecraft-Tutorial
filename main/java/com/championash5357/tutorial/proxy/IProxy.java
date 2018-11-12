@@ -18,9 +18,9 @@ public interface IProxy {
 	
 	void serverStarting(FMLServerStartingEvent event);
 	
-	EntityPlayer getPlayerFromContext(MessageContext ctx);
+	<T extends EntityPlayer> T getPlayerFromContext(MessageContext ctx);
 	
-	World getWorldFromContext(MessageContext ctx);
+	<T extends World> T getWorldFromContext(MessageContext ctx);
 	
 	void addRunnableFromContext(MessageContext ctx, Runnable task);
 }
