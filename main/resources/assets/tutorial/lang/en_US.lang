@@ -11,6 +11,23 @@ item.garnet_axe.name=Garnet Axe
 item.perspectives_record.name=Perspectives - Kevin MacLeod
 item.record.perspectives_record.desc=Perspectives
 
+item.itemdye.white.name=White Dye
+item.itemdye.orange.name=Orange Dye
+item.itemdye.magenta.name=Magenta Dye
+item.itemdye.light_blue.name=Light Blue Dye
+item.itemdye.yellow.name=Yellow Dye
+item.itemdye.lime.name=Lime Dye
+item.itemdye.pink.name=Pink Dye
+item.itemdye.gray.name=Gray Dye
+item.itemdye.silver.name=Silver Dye
+item.itemdye.cyan.name=Cyan Dye
+item.itemdye.purple.name=Purple Dye
+item.itemdye.blue.name=Blue Dye
+item.itemdye.brown.name=Brown Dye
+item.itemdye.green.name=Green Dye
+item.itemdye.red.name=Red Dye
+item.itemdye.black.name=Black Dye
+
 tile.purple_glowstone_fence.name=Purple Glowstone Fence
 tile.dual_furnace.name=Dual Furnace
 tile.strawberry_crop.name=Strawberry Crop

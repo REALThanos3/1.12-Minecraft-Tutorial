@@ -4,6 +4,7 @@ import com.championash5357.tutorial.client.Reference;
 import com.championash5357.tutorial.item.ItemCutter;
 import com.championash5357.tutorial.item.ItemFlyArmor;
 import com.championash5357.tutorial.item.ItemModAxe;
+import com.championash5357.tutorial.item.ItemNBTDye;
 import com.championash5357.tutorial.item.ItemRock;
 import com.championash5357.tutorial.item.ItemStrawberry;
 import com.championash5357.tutorial.item.ItemStrawberrySeeds;
@@ -13,9 +14,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
@@ -51,6 +52,8 @@ public class TutorialItems {
 	
 	public static final ItemTutorialRecord PERSPECTIVES_RECORD = new ItemTutorialRecord("perspectives", TutorialMusic.PERSPECTIVES, "perspectives_record", "itemperspectivesrecord");
 	
+	public static final Item DYE = new ItemNBTDye();
+	
 	@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 	public static class ItemRegistration {
 		public static final NonNullList<Item> ITEMS = NonNullList.<Item>create();
@@ -74,6 +77,8 @@ public class TutorialItems {
 				event.getRegistry().register(item);
 				ITEMS.add(item);
 			}
+			
+			event.getRegistry().register(DYE);
 			
 			registerOreDictionary();
 		}
