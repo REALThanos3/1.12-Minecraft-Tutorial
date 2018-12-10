@@ -4,8 +4,8 @@ import com.championash5357.tutorial.gui.gui.GuiUpdatedInventory;
 import com.championash5357.tutorial.init.TutorialBlocks.BlockRegistration;
 import com.championash5357.tutorial.init.TutorialItems;
 import com.championash5357.tutorial.init.TutorialItems.ItemRegistration;
+import com.championash5357.tutorial.registry.DyeType;
 import com.championash5357.tutorial.util.DyeUtil;
-import com.championash5357.tutorial.util.DyeUtil.DyeType;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiInventory;
@@ -23,6 +23,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class TutorialEvents {
@@ -64,7 +65,7 @@ public class TutorialEvents {
 			}
 		});
 		
-		for(DyeType dye : DyeType.values())
+		for(DyeType dye : GameRegistry.findRegistry(DyeType.class).getValues())
 			ModelBakery.registerItemVariants(TutorialItems.DYE, new ResourceLocation(TutorialItems.DYE.getRegistryName().toString() + "_" + dye.getName()));
 	}
 	

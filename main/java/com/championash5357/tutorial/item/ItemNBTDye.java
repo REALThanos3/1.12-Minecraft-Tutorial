@@ -1,12 +1,13 @@
 package com.championash5357.tutorial.item;
 
+import com.championash5357.tutorial.registry.DyeType;
 import com.championash5357.tutorial.util.DyeUtil;
-import com.championash5357.tutorial.util.DyeUtil.DyeType;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ItemNBTDye extends Item {
 	
@@ -20,7 +21,7 @@ public class ItemNBTDye extends Item {
 	@Override
 	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
 		if(this.isInCreativeTab(tab)) {
-			for(DyeType dye : DyeType.values())
+			for(DyeType dye : GameRegistry.findRegistry(DyeType.class).getValues())
 				items.add(DyeUtil.createDye(new ItemStack(this), dye));
 		}
 	}

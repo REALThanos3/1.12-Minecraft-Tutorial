@@ -1,5 +1,7 @@
 package com.championash5357.tutorial.util;
 
+import com.championash5357.tutorial.registry.DyeType;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -22,34 +24,5 @@ public class DyeUtil {
 			}
 		}
 		return "white";
-	}
-	
-	public static enum DyeType {
-		WHITE("white"),
-		ORANGE("orange"),
-		MAGENTA("magenta"),
-		LIGHT_BLUE("light_blue"),
-		YELLOW("yellow"),
-		LIME("lime"),
-		PINK("pink"),
-		GRAY("gray"),
-		SILVER("silver"),
-		CYAN("cyan"),
-		PURPLE("purple"),
-		BLUE("blue"),
-		BROWN("brown"),
-		GREEN("green"),
-		RED("red"),
-		BLACK("black");
-		
-		private String name;
-		
-		private DyeType(String name) {
-			this.name = name;
-		}
-		
-		public String getName() {
-			return this.name;
-		}
 	}
 }
