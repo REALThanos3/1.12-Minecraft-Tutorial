@@ -10,6 +10,7 @@ import com.championash5357.tutorial.potion.PotionFly;
 import com.championash5357.tutorial.potion.PotionTypeRegistry;
 import com.championash5357.tutorial.proxy.IProxy;
 import com.championash5357.tutorial.render.RenderingRegistry;
+import com.championash5357.tutorial.world.TutorialWorldGenerator;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantment.Rarity;
@@ -66,6 +67,7 @@ public class Tutorial {
 		GameRegistry.addSmelting(Items.LEATHER_CHESTPLATE, new ItemStack(TutorialItems.FLY_CHESTPLATE), 20.0f);
 		GameRegistry.addSmelting(Items.LEATHER_LEGGINGS, new ItemStack(TutorialItems.FLY_LEGGINGS), 20.0f);
 		GameRegistry.addSmelting(Items.LEATHER_BOOTS, new ItemStack(TutorialItems.FLY_BOOTS), 20.0f);
+		GameRegistry.registerWorldGenerator(new TutorialWorldGenerator(), 0);
 	}
 	
 	@EventHandler
