@@ -56,3 +56,5 @@ advancements.smelting.fly.title=Burning to Fly
 advancements.smelting.fly.description=Smelt yourself some fly armor.
 
 entity.Modded Iron Golem.name=Modded Iron Golem
+
+config.is_mod =Is CustomMod Loaded
