@@ -17,7 +17,9 @@ import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.Potion;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -67,6 +69,9 @@ public class Tutorial {
 		GameRegistry.addSmelting(Items.LEATHER_CHESTPLATE, new ItemStack(TutorialItems.FLY_CHESTPLATE), 20.0f);
 		GameRegistry.addSmelting(Items.LEATHER_LEGGINGS, new ItemStack(TutorialItems.FLY_LEGGINGS), 20.0f);
 		GameRegistry.addSmelting(Items.LEATHER_BOOTS, new ItemStack(TutorialItems.FLY_BOOTS), 20.0f);
+		ItemStack stack = new ItemStack(Items.DIAMOND_SWORD);
+		stack.addEnchantment(Enchantment.getEnchantmentByLocation("fire_aspect"), 2);
+		GameRegistry.addShapelessRecipe(new ResourceLocation(Reference.MOD_ID, "fire_sword"), null, stack, Ingredient.fromItem(Items.DIAMOND_SWORD), Ingredient.fromItem(Items.BLAZE_POWDER));
 		GameRegistry.registerWorldGenerator(new TutorialWorldGenerator(), 0);
 	}
 	
