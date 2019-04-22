@@ -4,6 +4,7 @@ import com.championash5357.tutorial.capability.TutorialCapability;
 import com.championash5357.tutorial.enchantment.EnchantmentFly;
 import com.championash5357.tutorial.entity.EntityRegistry;
 import com.championash5357.tutorial.gui.TutorialGuiHandler;
+import com.championash5357.tutorial.init.TutorialDimensions;
 import com.championash5357.tutorial.init.TutorialFluids;
 import com.championash5357.tutorial.init.TutorialItems;
 import com.championash5357.tutorial.potion.PotionFly;
@@ -73,6 +74,7 @@ public class Tutorial {
 		stack.addEnchantment(Enchantment.getEnchantmentByLocation("fire_aspect"), 2);
 		GameRegistry.addShapelessRecipe(new ResourceLocation(Reference.MOD_ID, "fire_sword"), null, stack, Ingredient.fromItem(Items.DIAMOND_SWORD), Ingredient.fromItem(Items.BLAZE_POWDER));
 		GameRegistry.registerWorldGenerator(new TutorialWorldGenerator(), 0);
+		TutorialDimensions.register();
 	}
 	
 	@EventHandler
