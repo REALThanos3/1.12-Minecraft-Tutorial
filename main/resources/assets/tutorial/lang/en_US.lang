@@ -36,6 +36,7 @@ tile.weird_cobblestone.name=Weird Cobblestone
 tile.special_drop.name=Special Drop
 tile.easel.name=Easel
 tile.blocksewingmachine.name=Sewing Machine
+tile.blocktutorialportal.name=Tutorial Portal
 
 container.dual_furnace=Dual Furnace
 

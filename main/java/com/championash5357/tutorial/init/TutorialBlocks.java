@@ -5,6 +5,7 @@ import com.championash5357.tutorial.block.BlockEasel;
 import com.championash5357.tutorial.block.BlockModdedFence;
 import com.championash5357.tutorial.block.BlockSpecialDrop;
 import com.championash5357.tutorial.block.BlockStrawberry;
+import com.championash5357.tutorial.block.BlockTutorialPortal;
 import com.championash5357.tutorial.block.BlockWeirdCobblestone;
 import com.championash5357.tutorial.client.Reference;
 import com.championash5357.tutorial.tileentity.TileEntityDualFurnace;
@@ -36,6 +37,7 @@ public class TutorialBlocks {
 	public static final Block SPECIAL_DROP = new BlockSpecialDrop();
 	public static final Block EASEL = new BlockEasel();
 	public static final Block CANVAS = null;
+	public static final BlockTutorialPortal PORTAL = new BlockTutorialPortal();
 	
 	@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 	public static class BlockRegistration {
@@ -49,7 +51,8 @@ public class TutorialBlocks {
 					PURPLE_GLOWSTONE_FENCE,
 					SPECIAL_DROP,
 					STRAWBERRY_CROP,
-					WEIRD_COBBLESTONE
+					WEIRD_COBBLESTONE,
+					PORTAL
 			};
 			
 			event.getRegistry().registerAll(blocks);
